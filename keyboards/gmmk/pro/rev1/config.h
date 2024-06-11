@@ -19,3 +19,10 @@
 
 /* SPI Config for LED Driver */
 #define SPI_DRIVER SPID1
+
+#ifdef RGB_MATRIX_ENABLE
+#define RGB_MATRIX_DRIVER IS31FL3737 // or IS31FL3733
+#define RGB_MATRIX_SLEEP true
+#define RGB_MATRIX_KEYPRESSES // Enables reactive RGB effects on key press
+#define RGB_MATRIX_FRAMEBUFFER_EFFECTS // Enables RGB matrix effects like rain, etc.
+#endif
