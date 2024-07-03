@@ -1,5 +1,23 @@
 # Quantum Mechanical Keyboard Firmware
 
+## Rob Erskine's fork
+
+Hi there, I recently [wrote a blog post on getting up and running with QMK with my GMMK Pro in order to support custom RGB support for custom Layers](https://roberskine.com/blog/gmmk-pro-qmk-resolving-stm32-dfu-device-has-no-driver/).
+
+The relevant code for my usecase can be found in `keyboards/gmmk/pro/rev1/ansi/keymaps/default`. (i tried making my own profile in viapro and rob, but ending up just overwriting the default).
+
+You can clone this repo, but I recommend making your own fork off of the original. From there, overwrite the files in the path above with the code I have here.
+
+Once you have that, you can then run `qmk compile -kb gmmk/pro/rev1/ansi -km default` which will use the default profile to create new firmware.
+
+This will create a new `gmmk_pro_rev1_ansi_default.bin` firmware file in the root of the directory. You can then flash this custom firmware using QMK Toolbox.
+
+If you need to make changes to your keymaps, you won't need to reflash. You should be able to use VIA to make changes moving forward.
+
+If you want to change the logic of the RGB lighting, you will however need to make changes to the `keyboards/gmmk/pro/rev1/ansi/keymaps/default/keymap.c` file. 
+
+---
+
 [![Current Version](https://img.shields.io/github/tag/qmk/qmk_firmware.svg)](https://github.com/qmk/qmk_firmware/tags)
 [![Discord](https://img.shields.io/discord/440868230475677696.svg)](https://discord.gg/Uq7gcHh)
 [![Docs Status](https://img.shields.io/badge/docs-ready-orange.svg)](https://docs.qmk.fm)
